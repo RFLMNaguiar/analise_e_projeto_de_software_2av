@@ -2,17 +2,15 @@ from abc import ABC, abstractmethod
 
 
 class EstadoContaBancaria(ABC):
-    def __init__(self):
-        self.nome = 'implements'
 
     @abstractmethod
-    def realizar_saque(self):
+    def realizar_saque(self) -> None:
         pass
 
     @abstractmethod
-    def realizar_deposito(self):
+    def realizar_deposito(self) -> None:
         pass
 
     @abstractmethod
-    def encerrar_conta(self):
+    def encerrar_conta(self) -> None:
         pass
