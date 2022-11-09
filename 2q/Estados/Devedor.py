@@ -3,12 +3,13 @@ import EstadoContaBancaria
 
 
 class Devedor(EstadoContaBancaria):
-
     def realizar_saque(self, quantidade: float) -> None:
-        if quantidade <= self.ContaBancaria.saldo + self.ContaBancaria.limite:
+        if quantidade <= self.ContaBancaria.saldo \
+                + self.ContaBancaria.limite:
             self.ContaBancaria.saldo -= quantidade
         else:
-            print("Não é possível realizar tal saque. Limite insuficiente.")
+            print("Não é possível realizar tal saque."
+                  "Limite insuficiente.")
 
     def realizar_deposito(self, quantidade: float) -> None:
         self.ContaBancaria.saldo += quantidade
@@ -16,4 +17,5 @@ class Devedor(EstadoContaBancaria):
             self.ContaBancaria.__estado = Disponivel.Disponivel()
 
     def encerrar_conta(self) -> None:
-        print(f"Não é possível encerrar sua conta, pois você está devendo R${-self.ContaBancaria.saldo}.")
+        print(f"Não é possível encerrar sua conta, "
+              f"pois você está devendo R${-self.ContaBancaria.saldo}.")
